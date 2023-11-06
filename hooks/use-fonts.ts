@@ -5,7 +5,7 @@ import {
 } from '@expo-google-fonts/inter'
 
 export function useFonts() {
-  const isLoaded = useInterFont({
+  const [isLoaded] = useInterFont({
     Inter_400Regular,
   })
 
