@@ -1,5 +1,10 @@
 import { Slot } from 'expo-router'
-import { ActivityIndicator, View } from 'react-native'
+import {
+  ActivityIndicator,
+  View,
+  StatusBar,
+  useColorScheme,
+} from 'react-native'
 import { white } from 'tailwindcss/colors'
 import * as SplashScreen from 'expo-splash-screen'
 
@@ -9,6 +14,7 @@ SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
   const isLoaded = useFonts()
+  const colorScheme = useColorScheme()
 
   if (!isLoaded) {
     SplashScreen.hideAsync()
@@ -20,5 +26,13 @@ export default function RootLayout() {
     )
   }
 
-  return <Slot />
+  return (
+    <>
+      <StatusBar
+        barStyle={colorScheme === 'dark' ? 'dark-content' : 'light-content'}
+      />
+
+      <Slot />
+    </>
+  )
 }
