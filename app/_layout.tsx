@@ -27,12 +27,12 @@ export default function RootLayout() {
   }
 
   return (
-    <>
+    <View className="flex-1 bg-zinc-900">
       <StatusBar
         barStyle={colorScheme === 'dark' ? 'dark-content' : 'light-content'}
       />
 
       <Slot />
-    </>
+    </View>
   )
 }
