@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native'
+import { fireEvent, render } from '@testing-library/react-native'
 
 import Content from 'app/content'
 
@@ -15,25 +15,22 @@ describe('content screen', () => {
     const button = getByText(`that's what happened`)
 
     expect(button).toBeDefined()
-
-    /** const onPressMock = jest.fn()
-
-    fireEvent.press(button)
-
-    expect(onPressMock).toHaveBeenCalled() */
   })
 
-  /** it('should render and change text correctly', () => {
-    const { getByText } = render(<Content />)
+  it.only('should render and change text correctly', () => {
+    const { getByTestId } = render(<Content />)
 
-    const button = getByText(`that's what happened`)
+    const input = getByTestId('content-input')
 
-    expect(button).toBeDefined()
+    expect(input).toBeDefined()
+    expect(input.props.multiline).toBe(true)
+    expect(input.props.numberOfLines).toBe(50)
+    expect(input.props.placeholder).toBe('Say what you want...')
 
-    /** const onPressMock = jest.fn()
+    fireEvent.changeText(input, 'Hello')
 
-    fireEvent.press(button)
+    console.log(input.props)
 
-    expect(onPressMock).toHaveBeenCalled()
-  }) */
+    // expect(input).toBeDefined()
+  })
 })
