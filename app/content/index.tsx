@@ -6,9 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native'
-import { blue, zinc } from 'tailwindcss/colors'
-
-import ArrowRight from '../../assets/svg/arrow-right.svg'
+import { zinc } from 'tailwindcss/colors'
 
 export default function Content() {
   return (
@@ -36,6 +34,7 @@ export default function Content() {
         placeholderTextColor={zinc[500]}
         multiline
         numberOfLines={50}
+        testID="content-input"
       />
     </KeyboardAvoidingView>
   )
