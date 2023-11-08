@@ -12,4 +12,21 @@ describe('login', () => {
 
     expect(getByText('BRICK')).toBeDefined()
   })
+
+  it('should render the inputs', () => {
+    mockUseRouter()
+
+    const { getByTestId } = render(<Login />)
+
+    expect(getByTestId('login-password-input')).toBeDefined()
+    expect(getByTestId('login-email-input')).toBeDefined()
+  })
+
+  it('should render the touchable opacity', () => {
+    mockUseRouter()
+
+    const { getByText } = render(<Login />)
+
+    expect(getByText(`Let's start using`)).toBeDefined()
+  })
 })

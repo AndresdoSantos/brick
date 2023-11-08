@@ -33,12 +33,14 @@ export default function Login() {
             placeholderTextColor={zinc[500]}
             autoCapitalize="none"
             keyboardType="email-address"
+            testID="login-email-input"
           />
           <TextInput
             className="mb-2 rounded px-2 h-9 w-full bg-zinc-700/30 text-white font-400 text-[13px]"
             placeholder="Password"
             placeholderTextColor={zinc[500]}
             secureTextEntry
+            testID="login-password-input"
           />
           <TouchableOpacity
             activeOpacity={0.8}
