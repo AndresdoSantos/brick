@@ -10,7 +10,6 @@
     "lint": "eslint --ext .ts --ext .tsx ./ --fix",
     "prepare": "husky install",
     "test": "jest",
-    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "dependencies": {

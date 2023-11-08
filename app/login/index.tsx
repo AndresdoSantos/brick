@@ -19,6 +19,7 @@ export default function Login() {
         source={require('../../assets/icon.png')}
         alt=""
         className="w-[150px] h-[150px]"
+        testID="login-image-logo"
       />
 
       <View className="mt-10 w-full bg-zinc-800/30 p-5 rounded-md">
