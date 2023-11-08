@@ -29,4 +29,12 @@ describe('login', () => {
 
     expect(getByText(`Let's start using`)).toBeDefined()
   })
+
+  it('should render the image', () => {
+    mockUseRouter()
+
+    const { getByTestId } = render(<Login />)
+
+    expect(getByTestId('login-image-logo')).toBeDefined()
+  })
 })
