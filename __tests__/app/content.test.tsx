@@ -17,7 +17,7 @@ describe('content screen', () => {
     expect(button).toBeDefined()
   })
 
-  it.only('should render and change text correctly', () => {
+  it('should render and change text correctly', () => {
     const { getByTestId } = render(<Content />)
 
     const input = getByTestId('content-input')
@@ -29,8 +29,6 @@ describe('content screen', () => {
 
     fireEvent.changeText(input, 'Hello')
 
-    console.log(input.props)
-
-    // expect(input).toBeDefined()
+    expect(input.props.value).toBe('Hello')
   })
 })

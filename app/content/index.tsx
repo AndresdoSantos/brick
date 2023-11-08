@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   KeyboardAvoidingView,
   Platform,
@@ -9,6 +10,8 @@ import {
 import { zinc } from 'tailwindcss/colors'
 
 export default function Content() {
+  const [post, setPost] = useState('')
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -35,6 +38,8 @@ export default function Content() {
         multiline
         numberOfLines={50}
         testID="content-input"
+        onChangeText={setPost}
+        value={post}
       />
     </KeyboardAvoidingView>
   )
